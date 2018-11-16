@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Alien Blasting</title>
+
+		<script language='Javascript'>
+			
+			function startGame() {
+				var level = document.getElementById('game-level').value;
+
+				window.location.href = 'game.html?' + level;
+				alert
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<p>
+				<b>Level: </b>
+				<select id="game-level">
+					<option value="1">Easy</option>
+					<option value="2">Medium</option>
+					<option value="3">Hard</option>
+				</select>
+			</p>
+			<br>
+
+			<img src="img/play.png" onclick="startGame()">
+		</div>
+
+	</body>
+	
+</html>
