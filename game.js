@@ -80,4 +80,20 @@ function blast(e) {
 	var idAlien = e.id;
 
 	document.getElementById(idAlien).src = 'img/small-alien2.png';
+
+	score(-1);
+}
+
+function score(action) {
+	var livingAliens = document.getElementById('living-aliens').innerHTML;
+	var deadAliens = document.getElementById('dead-aliens').innerHTML;
+
+	livingAliens = parseInt(livingAliens);
+	deadAliens = parseInt(deadAliens);
+
+	livingAliens = livingAliens + action;
+	deadAliens = deadAliens - action;
+
+	document.getElementById('living-aliens').innerHTML = livingAliens;
+	document.getElementById('dead-aliens').innerHTML = deadAliens
 }
