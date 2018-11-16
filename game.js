@@ -58,6 +58,7 @@ function countdown(seconds) {
 }
 
 function gameOver() {
+	 removeAlienEvents();
 	var msg = "GAME OVER. You couldn't stop the alien invasion."
 	alert(msg);
 }
@@ -113,12 +114,12 @@ function stopGame() {
 }
 
 function removeAlienEvents() {
-    var i = 1; //counter to get alien by id
+    var i = 0; //counter to get alien by id
     
     //scroll throught the elements by their id's and only stop the loop when there are no match for the id
-    while(document.getElementById('b'+i)) {
+    while(document.getElementById('a'+i)) {
         //removes the onclick event from the element
-        document.getElementById('b'+i).onclick = '';
+        document.getElementById('a'+i).onclick = '';
         i++; //increment i
     }
 }
