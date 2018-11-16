@@ -79,6 +79,7 @@ function createAliens(alienAmnt) {
 function blast(e) {
 	var idAlien = e.id;
 
+	document.getElementById(idAlien).setAttribute("onclick", "");
 	document.getElementById(idAlien).src = 'img/small-alien2.png';
 
 	score(-1);
