@@ -1,3 +1,5 @@
+var timerId = null // <-- variable that storage the timeout funcion call
+
 function startGame() {
 	var url = window.location.search; //pega soh o que esta a partir do sinal de interrogacao
 
@@ -35,6 +37,23 @@ function startGame() {
 
 	//show dead aliens amount
 	document.getElementById('dead-aliens').innerHTML = 0;
+
+	
+	countdown(seconds);	
+}
+
+function countdown(seconds) {
+	seconds = seconds - 1;
+
+	if (seconds < 0) {
+		clearTimeout(timerId); //stop setTimeout function execution
+		return false;
+	}
+
+	document.getElementById('watch').innerHTML = seconds;
+
+	timerId = setTimeout("countdown("+seconds+")", 1000);
+
 }
 
 function createAliens(alienAmnt) {
