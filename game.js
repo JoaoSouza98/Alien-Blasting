@@ -111,3 +111,14 @@ function gameStatus(livingAliens) {
 function stopGame() {
 	clearTimeout(timerId);
 }
+
+function removeAlienEvents() {
+    var i = 1; //counter to get alien by id
+    
+    //scroll throught the elements by their id's and only stop the loop when there are no match for the id
+    while(document.getElementById('b'+i)) {
+        //removes the onclick event from the element
+        document.getElementById('b'+i).onclick = '';
+        i++; //increment i
+    }
+}
