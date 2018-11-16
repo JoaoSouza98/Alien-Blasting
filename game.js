@@ -27,7 +27,7 @@ function startGame() {
 	document.getElementById('watch').innerHTML = seconds;
 
 	//aliens amount
-	var	alienAmnt = 20;
+	var	alienAmnt = 80;
 
 	createAliens(alienAmnt);
 
@@ -96,4 +96,17 @@ function score(action) {
 
 	document.getElementById('living-aliens').innerHTML = livingAliens;
 	document.getElementById('dead-aliens').innerHTML = deadAliens
+
+	gameStatus(livingAliens);
+}
+
+function gameStatus(livingAliens) {
+	if (livingAliens == 0) {
+		alert('Congratulations, you stop the alien menace... for now.');
+		stopGame();
+	}
+}
+
+function stopGame() {
+	clearTimeout(timerId);
 }
