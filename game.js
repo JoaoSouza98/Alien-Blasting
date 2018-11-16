@@ -67,9 +67,17 @@ function createAliens(alienAmnt) {
 		var alien = document.createElement("img");
 		alien.src = 'img/small-alien1.png';
 		alien.style.margin = '10px';
+		alien.id = 'a' + i;
+		alien.onclick = function() { blast(this); }
 
 		//adiciona cada elemento alien como sendo um filho da div scenary
 		document.getElementById('scenary').appendChild(alien);
 	}
 
+}
+
+function blast(e) {
+	var idAlien = e.id;
+
+	document.getElementById(idAlien).src = 'img/small-alien2.png';
 }
