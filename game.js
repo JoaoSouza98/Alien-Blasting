@@ -39,7 +39,7 @@ function startGame() {
 	document.getElementById('dead-aliens').innerHTML = 0;
 
 	
-	countdown(seconds);	
+	countdown(seconds + 1);	
 }
 
 function countdown(seconds) {
@@ -47,6 +47,7 @@ function countdown(seconds) {
 
 	if (seconds < 0) {
 		clearTimeout(timerId); //stop setTimeout function execution
+		gameOver();
 		return false;
 	}
 
@@ -54,6 +55,11 @@ function countdown(seconds) {
 
 	timerId = setTimeout("countdown("+seconds+")", 1000);
 
+}
+
+function gameOver() {
+	var msg = "GAME OVER. You couldn't stop the alien invasion."
+	alert(msg);
 }
 
 function createAliens(alienAmnt) {
